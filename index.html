@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./img/favicon3.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.15.1/css/all.css"
+      type="text/css"
+    />
+    <!-- <link rel="stylesheet" href="index.css" /> -->
+    <title>Nishanth Portolio</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:wght@100&family=Heebo:wght@800&family=Macondo&family=Sacramento&family=Satisfy&family=Yellowtail&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Bangers&family=Barlow+Condensed:wght@100&family=Cookie&family=Heebo:wght@800&family=Macondo&family=Roboto:wght@900&family=Sacramento&family=Satisfy&family=Yellowtail&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        max-width: 100%;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .navbar {
+        background-color: #093700;
+        color: white;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        cursor: pointer;
+        position: sticky;
+        top: 0;
+      }
+      .nav-left {
+        font-family: "Roboto", sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+        width: 20%;
+        margin: 0 9px;
+      }
+      .nav-middle {
+        width: 50%;
+      }
+      .nav-middle-ul {
+        display: flex;
+        justify-content: center;
+      }
+      .nav-middle-ul li {
+        list-style: none;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+      }
+      .nav-middle-ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Roboto", sans-serif;
+        padding: 7px;
+        margin: 11px;
+        margin-right: 94px;
+      }
+      .nav-right {
+        width: 30%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 20px;
+      }
+      .nav-right div {
+        border-bottom: 3px solid white;
+      }
+      .nav-right div:hover {
+        border-bottom: 3px solid rgb(26, 255, 0);
+      }
+      .nav-right div i:hover {
+        color: rgb(2, 255, 28);
+      }
+      .nav-right input {
+        padding: 6px 30px;
+        margin: 0 20px;
+        border-radius: 10px;
+        outline: none;
+        background: none;
+        border: none;
+        color: white;
+      }
+      .nav-btn {
+        font-size: 17px;
+        background: rgb(255, 255, 255);
+        padding: 5px 14px;
+        margin: 0px 23px;
+        border-radius: 6px;
+      }
+      .nav-btn:hover {
+        background: rgb(79, 79, 79);
+        color: rgb(255, 255, 255);
+        box-shadow: 0 0 10px white;
+        border: 2px solid white;
+        font-family: "Roboto", sans-serif;
+      }
+      .burger {
+        display: none;
+        cursor: pointer;
+        position: absolute;
+        top: 18px;
+        left: 90%;
+      }
+      .line {
+        background: rgb(255, 255, 255);
+        padding: 2px;
+        margin: 5px 11px 0px -11px;
+        width: 33px;
+        height: 1px;
+      }
+      .line:hover {
+        box-shadow: 0px 0px 5px white;
+      }
+
+      .background {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.7) url("./img/Background.jpg");
+        background-size: cover;
+        background-blend-mode: darken;
+        z-index: 10;
+      }
+      .section-image {
+        width: 302px;
+        height: 219px;
+        border-radius: 5px;
+      }
+      .section {
+        color: white;
+        width: 100%;
+        height: 100vh;
+      }
+      .setion-all {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100vh;
+      }
+      .section-left-logo {
+        width: 256px;
+        height: 157px;
+        background: white;
+        color: rgb(89, 123, 66);
+        margin: 0 0 0 250px;
+        outline: 24px solid rgb(0, 255, 4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 32px;
+        box-shadow: -79px -56px 10px green;
+        text-shadow: 0 0 10px lime;
+      }
+      .section-right-container {
+        border: 4px solid #1d5907;
+        margin: 0 170px 0 0;
+        height: 340px;
+        background: #00c800;
+        border-radius: 5px;
+        box-shadow: 0 0 20px lime;
+      }
+      .section-right-content {
+        height: 106px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Roboto";
+        color: #b0ffb9;
+        text-shadow: 0 0 5px white;
+      }
+      .article-logo {
+        font-size: 50px;
+        background-color: pink;
+        color: palevioletred;
+        border-radius: 15px;
+        margin-top: 5px;
+        text-align: center;
+      }
+      .article-content {
+        width: 80%;
+        display: block;
+        margin: auto;
+        text-align: center;
+      }
+      /* CSS for article content 1 */
+      .article-content-content1 {
+        display: flex;
+        align-items: center;
+        border: 3px solid #ff00f7;
+        color: rgb(255, 255, 255);
+        margin-top: 40px;
+        border-radius: 10px;
+        margin-bottom: 40px;
+        background: #f879ff;
+      }
+      .article-content-content1 h4 {
+        display: flex;
+        width: 30%;
+        height: 15vh;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+      }
+      .article-content-content1 p {
+        display: flex;
+        width: 40%;
+        height: 15vh;
+        align-items: center;
+        justify-content: center;
+        border-left: 2px solid rgb(255, 0, 200);
+        border-right: 2px solid rgb(255, 0, 200);
+        font-size: 20px;
+      }
+      .article-content-btn1 {
+        display: flex;
+        width: 30%;
+        height: 15vh;
+        align-items: center;
+        justify-content: center;
+      }
+      .article-content-btn1 button a {
+        text-decoration: none;
+        color: white;
+      }
+      .article-content-btn1 button a:hover {
+        text-decoration: none;
+        color: rgb(255, 0, 153);
+      }
+      .article-content-btn1 button {
+        font-size: 15px;
+        padding: 5px 5px 5px 5px;
+        margin: auto;
+        background-color: #ff00ee;
+        color: rgb(255, 255, 255);
+        border: 2px solid #670076;
+        border-radius: 5px;
+      }
+      .article-content-btn1 button:hover {
+        background-color: #ffffff;
+        color: #ff00ee;
+      }
+      /* CSS for article content 2 */
+      .article-content-content2 {
+        display: flex;
+        align-items: center;
+        border: 3px solid #9c9c00;
+        color: white;
+        margin-top: 40px;
+        border-radius: 10px;
+        margin-bottom: 40px;
+        background-color: rgb(206, 206, 0);
+      }
+      .article-content-content2 h4 {
+        display: flex;
+        width: 30%;
+        height: 15vh;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+      }
+      .article-content-content2 p {
+        display: flex;
+        width: 40%;
+        height: 15vh;
+        align-items: center;
+        justify-content: center;
+        border-left: 2px solid rgb(94, 80, 10);
+        border-right: 2px solid rgb(94, 80, 10);
+        font-size: 20px;
+      }
+      .article-content-btn2 {
+        display: flex;
+        width: 30%;
+        height: 15vh;
+        align-items: center;
+        justify-content: center;
+      }
+      .article-content-btn2 button {
+        font-size: 15px;
+        padding: 5px 5px 5px 5px;
+        margin: auto;
+        background-color: rgb(196, 196, 0);
+        color: rgb(255, 255, 255);
+        border: 2px solid rgb(102, 102, 0);
+        border-radius: 5px;
+      }
+      .article-content-btn2 button a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .article-content-btn2 button a:hover {
+        text-decoration: none;
+        color: rgb(169, 166, 0);
+      }
+      .article-content-btn2 button:hover {
+        background-color: rgb(255, 255, 255);
+        color: rgb(196, 196, 0);
+      }
+      /* CSS for article content 3 */
+      .article-content-content3 {
+        display: flex;
+        align-items: center;
+        border: 3px solid rgb(109, 0, 0);
+        color: rgb(255, 255, 255);
+        margin-top: 40px;
+        border-radius: 10px;
+        margin-bottom: 40px;
+        background-color: rgb(255, 119, 119);
+      }
+      .article-content-content3 h4 {
+        display: flex;
+        width: 30%;
+        height: 15vh;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+      }
+      .article-content-content3 p {
+        display: flex;
+        width: 40%;
+        height: 15vh;
+        align-items: center;
+        justify-content: center;
+        border-left: 2px solid rgb(255, 0, 0);
+        border-right: 2px solid rgb(255, 0, 0);
+        font-size: 20px;
+      }
+      .article-content-btn3 {
+        display: flex;
+        width: 30%;
+        height: 15vh;
+        align-items: center;
+        justify-content: center;
+      }
+      .article-content-btn3 button {
+        font-size: 15px;
+        padding: 5px 5px 5px 5px;
+        margin: auto;
+        background-color: rgb(253, 131, 131);
+        color: rgb(255, 255, 255);
+        border: 2px solid rgb(255, 0, 0);
+        border-radius: 5px;
+      }
+      .article-content-btn3 button:hover {
+        background-color: rgb(255, 255, 255);
+        color: rgb(253, 131, 131);
+      }
+      .article-content-btn3 button a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .article-content-btn3 button a:hover {
+        text-decoration: none;
+        color: rgb(255, 0, 0);
+      }
+      /* CSS for article content 4 */
+      .article-content-content4 {
+        display: flex;
+        align-items: center;
+        border: 3px solid rgb(0, 61, 1);
+        color: rgb(255, 255, 255);
+        margin-top: 40px;
+        border-radius: 10px;
+        margin-bottom: 40px;
+        background-color: #95ff8b;
+      }
+      .article-content-content4 h4 {
+        display: flex;
+        width: 30%;
+        height: 15vh;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+      }
+      .article-content-content4 p {
+        display: flex;
+        width: 40%;
+        height: 15vh;
+        align-items: center;
+        justify-content: center;
+        border-left: 2px solid rgb(2, 67, 14);
+        border-right: 2px solid rgb(2, 67, 14);
+        font-size: 20px;
+      }
+      .article-content-btn4 {
+        display: flex;
+        width: 30%;
+        height: 15vh;
+        align-items: center;
+        justify-content: center;
+      }
+      .article-content-btn4 button {
+        font-size: 15px;
+        padding: 5px 5px 5px 5px;
+        margin: auto;
+        background-color: rgb(55, 255, 0);
+        color: rgb(255, 255, 255);
+        border: 2px solid rgb(91, 142, 50);
+        border-radius: 5px;
+      }
+      .article-content-btn4 button:hover {
+        background-color: rgb(255, 255, 255);
+        color: rgb(55, 255, 0);
+      }
+      .article-content-btn4 button a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .article-content-btn4 button a:hover {
+        text-decoration: none;
+        color: rgb(9, 255, 0);
+      }
+      /* Footer */
+      .footer-footer {
+        width: 100%;
+        height: 30vh;
+        background-color: rgb(49, 48, 48);
+        color: white;
+      }
+      .footer-footer h1 {
+        text-align: center;
+        text-decoration: underline;
+      }
+      .footer-container {
+        width: 100%;
+        height: 30vh;
+      }
+      .footer-container-ul {
+        display: flex;
+        height: 30vh;
+        justify-content: center;
+        align-items: center;
+      }
+      .footer-container-ul li {
+        list-style: none;
+        padding: 30px;
+      }
+      .footer-container-ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 30px;
+      }
+      .footer2 {
+        width: 100%;
+        height: 5vh;
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+      }
+
+      @media screen and (max-width: 1200px) {
+        .navbar {
+          display: block;
+        }
+        .nav-left {
+          display: block;
+          text-align: center;
+          position: relative;
+          left: 20%;
+          top: 7px;
+        }
+        .nav-middle {
+          width: 100%;
+        }
+        .nav-middle-ul {
+          display: block;
+          text-align: center;
+          margin: 25px 0 0 35px;
+          position: relative;
+        }
+        .nav-right {
+          width: 98%;
+          display: block;
+          text-align: center;
+        }
+        .nav-btn {
+          margin: 11px 23px;
+        }
+        .burger {
+          display: block;
+        }
+        .h-nav-repo {
+          height: 75px;
+        }
+        .v-nav-repo {
+          display: none;
+        }
+        /* Section */
+        .setion-all {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column-reverse;
+          align-items: center;
+          height: 100vh;
+        }
+        .section-right-container {
+          margin: 70px 0 0 0;
+          height: 340px;
+          background: #00c800;
+          border-radius: 5px;
+        }
+        .section-left-logo {
+          width: 256px;
+          height: 157px;
+          background: white;
+          color: rgb(89, 123, 66);
+          margin: 50px 0 50px 0;
+          outline: 24px solid rgb(0, 255, 4);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          font-size: 32px;
+          box-shadow: none;
+        }
+        /* Article 1 */
+        .article-content-content1 {
+          display: flex;
+          flex-direction: column;
+          /* align-items: center; */
+          border: 3px solid #ff00f7;
+          color: rgb(255, 255, 255);
+          margin-top: 40px;
+          border-radius: 10px;
+          margin-bottom: 40px;
+          background: #f879ff;
+          width: auto;
+        }
+        .article-content-content1 h4 {
+          display: block;
+          width: 100%;
+          height: 7vh;
+        }
+        .article-content-content1 p {
+          display: block;
+          width: 100%;
+        }
+        .article-content-btn1 {
+          width: 100%;
+          height: 8vh;
+        }
+        /* Article 2 */
+        .article-content-content2 {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 40px;
+          border-radius: 10px;
+          margin-bottom: 40px;
+          width: auto;
+        }
+        .article-content-content2 h4 {
+          display: block;
+          width: 100%;
+          height: 7vh;
+        }
+        .article-content-content2 p {
+          display: block;
+          width: 100%;
+        }
+        .article-content-btn2 {
+          width: 100%;
+          height: 8vh;
+        }
+        /* Article 3*/
+        .article-content-content3 {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 40px;
+          border-radius: 10px;
+          margin-bottom: 40px;
+          width: auto;
+        }
+        .article-content-content3 h4 {
+          display: block;
+          width: 100%;
+          height: 7vh;
+        }
+        .article-content-content3 p {
+          display: block;
+          width: 100%;
+        }
+        .article-content-btn3 {
+          width: 100%;
+          height: 8vh;
+        }
+        /* Article 4*/
+        .article-content-content4 {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 40px;
+          border-radius: 10px;
+          margin-bottom: 40px;
+          width: auto;
+        }
+        .article-content-content4 h4 {
+          display: block;
+          width: 100%;
+          height: 7vh;
+        }
+        .article-content-content4 p {
+          display: block;
+          width: 100%;
+        }
+        .article-content-btn4 {
+          width: 100%;
+          height: 8vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar h-nav-repo">
+      <nav class="nav-left">
+        <h2>Portfolio</h2>
+      </nav>
+      <nav class="nav-middle v-nav-repo">
+        <ul class="nav-middle-ul">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="./resume.html">Resume</a></li>
+        </ul>
+      </nav>
+      <nav class="nav-right v-nav-repo">
+        <div>
+          <i class="fa fa-search"></i>
+          <input
+            type="text"
+            name="nav-search"
+            id="nav-search"
+            placeholder="Search"
+          />
+        </div>
+        <button class="nav-btn v-nav-repo">Search</button>
+      </nav>
+      <div class="burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </nav>
+    <!-- Section -->
+    <div class="section background" id="home">
+      <div class="setion-all">
+        <div class="section-left-logo">
+          <h2>Nishanth</h2>
+          <h2>Rathod</h2>
+        </div>
+        <div class="section-right-container">
+          <div class="section-right-img">
+            <img class="section-image" src="./img/Myself1.jpeg" alt="" />
+          </div>
+          <div class="section-right-content">
+            <h1>Nishanth Portfolio</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Article Content -->
+    <h1 class="article-logo" id="about">My Projects</h1>
+    <article class="article-content">
+      <!-- ****content-1**** -->
+      <div class="article-content-content1">
+        <h4>Nishanth-Word-Coverter</h4>
+        <p>
+          Nishanth-Word-Coverter is the react based project which is used to
+          convert and copy the text in user convient way
+        </p>
+        <div class="article-content-btn1">
+          <button>
+            <a
+              href="https://github.com/Nishanth939/WordConverter"
+              target="_blank"
+              >View Code</a
+            >
+          </button>
+        </div>
+      </div>
+      <!-- ****content-2**** -->
+      <div class="article-content-content2">
+        <h4>Nishanth News India</h4>
+        <p>
+          Nishanth News India is a News application build by using News api
+          which serves the customer by providing the daily news of India
+        </p>
+        <div class="article-content-btn2">
+          <button>
+            <a
+              href="https://github.com/Nishanth939/NishanthNews"
+              target="_blank"
+              >View Code</a
+            >
+          </button>
+        </div>
+      </div>
+      <!-- ****content-3**** -->
+      <div class="article-content-content3">
+        <h4>Nishanth-Notes</h4>
+        <p>
+          Nishanth-Notes is the MERN Project which is used to take the inportant
+          Notes
+        </p>
+        <div class="article-content-btn3">
+          <button>
+            <a
+              href="https://github.com/Nishanth939/NishanthNotes"
+              target="_blank"
+              >View Code</a
+            >
+          </button>
+        </div>
+      </div>
+      <!-- ****content-4**** -->
+      <div class="article-content-content4">
+        <h4>Nishanth-Website</h4>
+        <p>
+          Nishanth-Website is the First Website build by using HTML,CSS and
+          BASIC JS
+        </p>
+        <div class="article-content-btn4">
+          <button>
+            <a
+              href="https://github.com/Nishanth939/NishanthWebsite"
+              target="_blank"
+              >View Code</a
+            >
+          </button>
+          <button>
+            <a
+              href="https://nishanth939.github.io/NishanthWebsite/"
+              target="_blank"
+              >View Website</a
+            >
+          </button>
+        </div>
+      </div>
+    </article>
+    <footer class="footer-footer" id="contact">
+      <h1>Contact-me</h1>
+      <div class="footer-container">
+        <ul class="footer-container-ul">
+          <li>
+            <a href="https://github.com/Nishanth939" target="_blank"
+              ><i class="fa fa-github"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/nishantnrathod/?hl=en"
+              target="_blank"
+            >
+              <i class="fa fa-instagram" style="color: rgb(233, 71, 98)"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://www.facebook.com/chinnturamavath.chinnturamavath/"
+              target="_blank"
+            >
+              <i class="fa fa-facebook" style="color: rgb(120, 145, 255)"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <footer class="footer2">
+      <h2>CopyRight &copy; All Right Reserved</h2>
+    </footer>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/c50b6f2fb8.js"
+    crossorigin="anonymous"
+  ></script>
+  <!-- <script src="index.js"></script> -->
+  <script>
+    burger = document.querySelector(".burger");
+    navbar = document.querySelector(".navbar");
+    navRight = document.querySelector(".nav-right");
+    navMiddle = document.querySelector(".nav-middle");
+    navBtn = document.querySelector(".nav-btn");
+
+    burger.addEventListener("click", () => {
+      navbar.classList.toggle("h-nav-repo");
+      navRight.classList.toggle("v-nav-repo");
+      navMiddle.classList.toggle("v-nav-repo");
+      navBtn.classList.toggle("v-nav-repo");
+    });
+  </script>
+</html>
